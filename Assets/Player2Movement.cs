@@ -1,46 +1,36 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1Movement : MonoBehaviour
+public class Player2Movement : MonoBehaviour
 {
     public float movementSpeed, rotationSpeed;
-    public GameObject player2;
-
-
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
+
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(0, 0, movementSpeed);
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.Translate(0, 0, -movementSpeed);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(0, rotationSpeed, 0);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(0, -rotationSpeed, 0);
         }
-    }
 
-    void OnCollisionEnter(Collision col)
-        {
-            if (col.gameObject.name == "Player2")
-            {
-                Destroy(player2);
-            }
-        }
+    }
 }
+
