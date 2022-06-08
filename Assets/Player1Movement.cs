@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player1Movement : MonoBehaviour
 {
     public float movementSpeed, rotationSpeed;
-    public GameObject player2;
+    public GameObject player2, boost1;
 
 
     // Start is called before the first frame update
@@ -37,10 +37,14 @@ public class Player1Movement : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name == "Player2")
         {
-            if (col.gameObject.name == "Player2")
-            {
-                Destroy(player2);
-            }
+            Destroy(player2);
         }
+        if (col.gameObject.name == "boost1")
+        {
+            boost1.SetActive(false); 
+        }
+    }
 }

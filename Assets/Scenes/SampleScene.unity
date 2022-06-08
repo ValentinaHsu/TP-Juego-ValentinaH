@@ -336,6 +336,7 @@ MonoBehaviour:
   movementSpeed: 0.2
   rotationSpeed: 6
   player2: {fileID: 1768372983}
+  boost1: {fileID: 207454040}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +420,7 @@ GameObject:
   - component: {fileID: 207454041}
   - component: {fileID: 207454045}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: boost1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,7 +818,7 @@ MonoBehaviour:
   txtTime: {fileID: 2035603020}
   txtTimeFloored: {fileID: 2097986425}
   cube: {fileID: 207454040}
-  timeToChange: 2
+  timeToChange: 0
   waitTime: 5
 --- !u!4 &1828011592
 Transform:
