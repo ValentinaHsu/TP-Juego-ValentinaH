@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player2Movement : MonoBehaviour
 {
-    public float movementSpeed, rotationSpeed;
+    float movementSpeed=0.1f, rotationSpeed=5;
     // Start is called before the first frame update
     void Start()
     {

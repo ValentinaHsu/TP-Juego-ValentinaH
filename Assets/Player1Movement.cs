@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class Player1Movement : MonoBehaviour
 {
-    float movementSpeed=0.2f, rotationSpeed;
+    float movementSpeed = 0.1f, rotationSpeed=5;
     public GameObject player2, boost1;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +15,21 @@ public class Player1Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, 0, movementSpeed);
-        
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(0, 0, movementSpeed);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(0, 0, -movementSpeed);
+        }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(movementSpeed, 0, 0);
+            transform.Rotate(0, rotationSpeed, 0);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(-movementSpeed, 0, 0);
+            transform.Rotate(0, -rotationSpeed, 0);
         }
     }
 
@@ -37,7 +41,7 @@ public class Player1Movement : MonoBehaviour
         }
         if (col.gameObject.name == "boost1")
         {
-            boost1.SetActive(false); 
+            boost1.SetActive(false);
         }
     }
 }

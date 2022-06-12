@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.43819848, g: 0.48621333, b: 0.5664912, a: 1}
+  m_IndirectSpecularColor: {r: 0.4381988, g: 0.48621368, b: 0.566492, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -333,10 +333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946fd6c8cd694f04ea03858573cbff74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.2
-  rotationSpeed: 6
-  player2: {fileID: 1768372983}
-  boost1: {fileID: 207454040}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,9 +506,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c30d8ad210cb934ab78c00cd124352a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txtTime: {fileID: 2035603020}
-  txtTimeFloored: {fileID: 2097986425}
-  cube: {fileID: 207454040}
+  boost1: {fileID: 207454040}
+  player1: {fileID: 161708302}
+  player2: {fileID: 1768372983}
   timeToChange: 0
   waitTime: 0
 --- !u!1 &534669902
@@ -784,8 +780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fa87f65e395f9642a643f69eeaa1ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.2
-  rotationSpeed: 6
 --- !u!1 &1828011590
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,9 +809,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c30d8ad210cb934ab78c00cd124352a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txtTime: {fileID: 2035603020}
-  txtTimeFloored: {fileID: 2097986425}
-  cube: {fileID: 207454040}
+  boost1: {fileID: 207454040}
+  player1: {fileID: 161708302}
+  player2: {fileID: 1768372983}
   timeToChange: 0
   waitTime: 5
 --- !u!4 &1828011592
