@@ -24,7 +24,7 @@ public class timeManagement : MonoBehaviour
         if (counter == i)
         {            
             boost1.SetActive(true);
-            i += 500;
+            i += 1000;
         }
                 
     }

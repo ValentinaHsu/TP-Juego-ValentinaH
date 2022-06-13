@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Player1Movement : MonoBehaviour
 {
     float movementSpeed = 0.1f, rotationSpeed=5;
@@ -33,15 +34,12 @@ public class Player1Movement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision col)
+    /*void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "Player2")
-        {
-            Destroy(player2);
-        }
+        
         if (col.gameObject.name == "boost1")
         {
             boost1.SetActive(false);
         }
-    }
+    }*/
 }
