@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Player1Movement : MonoBehaviour
 {
-    float movementSpeed = 0.1f, rotationSpeed=5;
+    float movementSpeed = 0.1f, rotationSpeed=5, tiempo;
     public GameObject player2, boost1;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,7 @@ public class Player1Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //time += Time.deltaTime;
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(0, 0, movementSpeed);
@@ -34,12 +35,18 @@ public class Player1Movement : MonoBehaviour
         }
     }
 
-    /*void OnCollisionEnter(Collision col)
+    void OnCollisionEnter(Collision col)
     {
-        
+
         if (col.gameObject.name == "boost1")
         {
+            tiempo = Time.time;
             boost1.SetActive(false);
+            if(Time.time < tiempo)
+            //for (int i = 2; time < time + i; time++)
+            {
+                movementSpeed = 0.2f;
+            }
         }
-    }*/
+    }
 }

@@ -7,7 +7,7 @@ public class timeManagmentPlayers : MonoBehaviour
 {
     public GameObject player1, player2, boost1;
     public Text textoMancha, tiempo, lost;
-    float mancha1=0, mancha2=14;
+    float mancha1=0, mancha2=14, speedMovement;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,10 +45,22 @@ public class timeManagmentPlayers : MonoBehaviour
             {
                 lost.text = "Player 2 ha perdido";
             }
-            if (col.gameObject.name == "boost1")
+            /*if (col.gameObject.name == "boost1")
             {
                 boost1.SetActive(false);
-            }
+                for (int i = 2; Time.time < Time.time + i; i++)
+                {
+                    speedMovement = 0.2f;
+                    if (Input.GetKey(KeyCode.W))
+                    {
+                        transform.Translate(0, 0, speedMovement);
+                    }
+                    if (Input.GetKey(KeyCode.S))
+                    {
+                        transform.Translate(0, 0, -speedMovement);
+                    }
+                }
+            }*/
         }
         else if (Time.time > mancha2 && Time.time > mancha1)
         { 
@@ -62,7 +74,15 @@ public class timeManagmentPlayers : MonoBehaviour
                 boost1.SetActive(false);
                 for(int i=2; Time.time < Time.time +i; i++)
                 {
-                    speed = GetComponent<Player1Movement>();
+                    speedMovement= 0.2f;
+                    if (Input.GetKey(KeyCode.W))
+                    {
+                        transform.Translate(0, 0, speedMovement);
+                    }
+                    if (Input.GetKey(KeyCode.S))
+                    {
+                        transform.Translate(0, 0, -speedMovement);
+                    }
                 }
             }
         }
