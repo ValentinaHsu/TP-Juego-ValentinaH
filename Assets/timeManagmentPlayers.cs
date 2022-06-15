@@ -72,7 +72,7 @@ public class timeManagmentPlayers : MonoBehaviour
             if (col.gameObject.name == "boost1")
             {
                 boost1.SetActive(false);
-                for(int i=2; Time.time < Time.time +i; i++)
+                /*for(int i=2; Time.time < Time.time +i; i++)
                 {
                     speedMovement= 0.2f;
                     if (Input.GetKey(KeyCode.W))
@@ -83,7 +83,7 @@ public class timeManagmentPlayers : MonoBehaviour
                     {
                         transform.Translate(0, 0, -speedMovement);
                     }
-                }
+                }*/
             }
         }
     }

@@ -42,8 +42,9 @@ public class Player1Movement : MonoBehaviour
         {
             tiempo = Time.time;
             boost1.SetActive(false);
-            if(Time.time < tiempo)
+            if(Time.time < tiempo+2)
             //for (int i = 2; time < time + i; time++)
+            
             {
                 movementSpeed = 0.2f;
             }
