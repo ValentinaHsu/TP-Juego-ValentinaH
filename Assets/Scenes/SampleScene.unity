@@ -335,8 +335,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946fd6c8cd694f04ea03858573cbff74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1: {fileID: 161708302}
   player2: {fileID: 1768372983}
   boost1: {fileID: 207454040}
+  i: 3
 --- !u!114 &161708309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,7 +910,7 @@ GameObject:
   - component: {fileID: 1244136820}
   - component: {fileID: 1244136819}
   m_Layer: 0
-  m_Name: Plane (1)
+  m_Name: death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

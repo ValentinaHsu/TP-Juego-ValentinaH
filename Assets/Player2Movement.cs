@@ -32,5 +32,39 @@ public class Player2Movement : MonoBehaviour
         }
 
     }
+
+    void OnCollisionEnter(Collision col)
+    {
+        /*if (col.gameObject.name == "boost1")
+        {
+            tiempo = Time.time;
+            boost1.SetActive(false);
+            if (Time.time < tiempo + 1)
+            //while (Time.time < tiempo+1)            
+            {
+                movementSpeed = 0.2f;
+            }
+            else
+            {
+                movementSpeed = 0.1f;
+            }
+        }
+        if (col.gameObject.name == "death")
+        {
+            CloneObject();
+        }
+    }
+
+    public int i = 3;
+    public void CloneObject()
+    {
+        while (i > 0)
+        {
+            i--;
+            Debug.Log(i);
+            Instantiate(player2);
+        }
+    }*/
+    }
 }
 

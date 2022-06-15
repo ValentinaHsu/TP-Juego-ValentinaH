@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class Player1Movement : MonoBehaviour
 {
-    float movementSpeed = 0.1f, rotationSpeed=5, tiempo;
-    public GameObject player2, boost1;
+    float movementSpeed = 0.1f, rotationSpeed = 5, tiempo;
+    public GameObject player1, player2, boost1;
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
     // Update is called once per frame
     void Update()
@@ -37,17 +37,37 @@ public class Player1Movement : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-
         if (col.gameObject.name == "boost1")
         {
             tiempo = Time.time;
             boost1.SetActive(false);
-            if(Time.time < tiempo+2)
-            //for (int i = 2; time < time + i; time++)
-            
+            if (Time.time < tiempo + 1)
+            //while (Time.time < tiempo+1)            
             {
                 movementSpeed = 0.2f;
             }
+            else
+            {
+                movementSpeed = 0.1f;
+            }
+        }
+        if (col.gameObject.name == "death")
+        {
+            CloneObject();
+        }
+    }
+
+    public int i = 3;
+    public void CloneObject()
+    {
+        float a = 0.5f;
+        while (i > 0)
+        {
+            player1.transform.localScale = new Vector3(a,a,a);
+            a -= 0.1f;
+            i--;
+            Debug.Log(i);
+            Instantiate(player1);
         }
     }
 }
