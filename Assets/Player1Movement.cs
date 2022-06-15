@@ -37,6 +37,10 @@ public class Player1Movement : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
+        /*  if (Input.GetKeyDown(KeyCode.T))
+        {
+            charController.$$anonymous$$ove(forward$$anonymous$$ovement * dashSpeed * Time.deltaTime);
+        }*/
         if (col.gameObject.name == "boost1")
         {
             tiempo = Time.time;
