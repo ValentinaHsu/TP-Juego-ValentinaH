@@ -7,7 +7,7 @@ public class timeManagmentPlayers : MonoBehaviour
 {
     public GameObject player1, player2, boost1;
     public Text textoMancha, tiempo, lost;
-    float mancha1=0, mancha2=14, speedMovement;
+    float mancha1=0, mancha2=14, i=1, speedMovement;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +18,14 @@ public class timeManagmentPlayers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Time.time == mancha1)
+        {
+            mancha1 += 14-i;
+            mancha2 += 14 - i;
+            i += 1;
+        }
+        
+
         tiempo.text = Mathf.FloorToInt(Time.time).ToString();
         if (Time.time > mancha1 && Time.time <= mancha2)
         {
@@ -44,23 +52,7 @@ public class timeManagmentPlayers : MonoBehaviour
             if (col.gameObject.name == "Player2")
             {
                 lost.text = "Player 2 ha perdido";
-            }
-            /*if (col.gameObject.name == "boost1")
-            {
-                boost1.SetActive(false);
-                for (int i = 2; Time.time < Time.time + i; i++)
-                {
-                    speedMovement = 0.2f;
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        transform.Translate(0, 0, speedMovement);
-                    }
-                    if (Input.GetKey(KeyCode.S))
-                    {
-                        transform.Translate(0, 0, -speedMovement);
-                    }
-                }
-            }*/
+            }            
         }
         else if (Time.time > mancha2 && Time.time > mancha1)
         { 
@@ -69,22 +61,7 @@ public class timeManagmentPlayers : MonoBehaviour
                 //player1.SetActive(false);
                 lost.text = "Player1 ha perdido";
             }
-            if (col.gameObject.name == "boost1")
-            {
-                boost1.SetActive(false);
-                /*for(int i=2; Time.time < Time.time +i; i++)
-                {
-                    speedMovement= 0.2f;
-                    if (Input.GetKey(KeyCode.W))
-                    {
-                        transform.Translate(0, 0, speedMovement);
-                    }
-                    if (Input.GetKey(KeyCode.S))
-                    {
-                        transform.Translate(0, 0, -speedMovement);
-                    }
-                }*/
-            }
+            
         }
     }
 }

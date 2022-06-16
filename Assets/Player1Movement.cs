@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class Player1Movement : MonoBehaviour
 {
-    float movementSpeed = 0.1f, rotationSpeed = 5, tiempo;
-    public GameObject player1, player2, boost1;
+    float rotationSpeed = 5, tiempo;
+    public float movementSpeed = 0.1f;
+    public GameObject player1, player2, boost1, boost2, boost3, boost4, boost5, boost6;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,29 +36,81 @@ public class Player1Movement : MonoBehaviour
         }
     }
 
+    public float sec=1;
     void OnCollisionEnter(Collision col)
     {
         /*  if (Input.GetKeyDown(KeyCode.T))
         {
             charController.$$anonymous$$ove(forward$$anonymous$$ovement * dashSpeed * Time.deltaTime);
         }*/
+        if (col.gameObject.name == "death")
+        {
+            CloneObject();
+        }
+
         if (col.gameObject.name == "boost1")
         {
             tiempo = Time.time;
             boost1.SetActive(false);
             if (Time.time < tiempo + 1)
-            //while (Time.time < tiempo+1)            
+            //while (Time.time < tiempo+sec)            
             {
-                movementSpeed = 0.2f;
-            }
-            else
+                movementSpeed = 0.15f;
+            }            
+        }
+        if (col.gameObject.name == "boost3")
+        {
+            tiempo = Time.time;
+            boost3.SetActive(false);
+            if (Time.time < tiempo + 1)
+            //while (Time.time < tiempo+sec)            
             {
-                movementSpeed = 0.1f;
+                movementSpeed = 0.15f;
             }
         }
-        if (col.gameObject.name == "death")
+        if (col.gameObject.name == "boost5")
         {
-            CloneObject();
+            tiempo = Time.time;
+            boost5.SetActive(false);
+            if (Time.time < tiempo + 1)
+            //while (Time.time < tiempo+sec)            
+            {
+                movementSpeed = 0.15f;
+            }
+        }
+
+        if (col.gameObject.name == "boost2")
+        {
+            tiempo = Time.time;
+            boost2.SetActive(false);
+            if (Time.time < tiempo + 1)
+            //while (Time.time < tiempo+1)            
+            {
+                movementSpeed = 0.06f;
+            }
+            
+        }
+        if (col.gameObject.name == "boost4")
+        {
+            tiempo = Time.time;
+            boost4.SetActive(false);
+            if (Time.time < tiempo + 1)
+            //while (Time.time < tiempo+1)            
+            {
+                movementSpeed = 0.06f;
+            }
+
+        }
+        if (col.gameObject.name == "boost6")
+        {
+            tiempo = Time.time;
+            boost6.SetActive(false);
+            if (Time.time < tiempo + 1)
+            //while (Time.time < tiempo+1)            
+            {
+                movementSpeed = 0.06f;
+            }
+
         }
     }
 
