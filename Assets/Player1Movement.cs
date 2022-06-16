@@ -6,12 +6,15 @@ using UnityEngine;
 
 public class Player1Movement : MonoBehaviour
 {
+    public AudioClip bt;
+    AudioSource source;
     float rotationSpeed = 5, tiempo;
     public float movementSpeed = 0.1f;
     public GameObject player1, player2, boost1, boost2, boost3, boost4, boost5, boost6;
     // Start is called before the first frame update
     void Start()
     {
+        source = GetComponent<AudioSource>();
 
     }
     // Update is called once per frame
@@ -50,37 +53,45 @@ public class Player1Movement : MonoBehaviour
 
         if (col.gameObject.name == "boost1")
         {
+            source.clip = bt;
+            source.Play();
             tiempo = Time.time;
             boost1.SetActive(false);
             if (Time.time < tiempo + 1)
             //while (Time.time < tiempo+sec)            
             {
-                movementSpeed = 0.15f;
+                movementSpeed = 0.2f;
             }            
         }
         if (col.gameObject.name == "boost3")
         {
+            source.clip = bt;
+            source.Play();
             tiempo = Time.time;
             boost3.SetActive(false);
             if (Time.time < tiempo + 1)
             //while (Time.time < tiempo+sec)            
             {
-                movementSpeed = 0.15f;
+                movementSpeed = 0.2f;
             }
         }
         if (col.gameObject.name == "boost5")
         {
+            source.clip = bt;
+            source.Play();
             tiempo = Time.time;
             boost5.SetActive(false);
             if (Time.time < tiempo + 1)
             //while (Time.time < tiempo+sec)            
             {
-                movementSpeed = 0.15f;
+                movementSpeed = 0.2f;
             }
         }
 
         if (col.gameObject.name == "boost2")
         {
+            source.clip = bt;
+            source.Play();
             tiempo = Time.time;
             boost2.SetActive(false);
             if (Time.time < tiempo + 1)
@@ -92,6 +103,8 @@ public class Player1Movement : MonoBehaviour
         }
         if (col.gameObject.name == "boost4")
         {
+            source.clip = bt;
+            source.Play();
             tiempo = Time.time;
             boost4.SetActive(false);
             if (Time.time < tiempo + 1)
@@ -103,6 +116,8 @@ public class Player1Movement : MonoBehaviour
         }
         if (col.gameObject.name == "boost6")
         {
+            source.clip = bt;
+            source.Play();
             tiempo = Time.time;
             boost6.SetActive(false);
             if (Time.time < tiempo + 1)
@@ -115,12 +130,12 @@ public class Player1Movement : MonoBehaviour
     }
 
     public int i = 3;
-    public void CloneObject()
+    public void CloneObject(GameObject player)
     {
         float a = 0.5f;
         while (i > 0)
         {
-            player1.transform.localScale = new Vector3(a,a,a);
+            player.transform.localScale = new Vector3(a,a,a);
             a -= 0.1f;
             i--;
             Debug.Log(i);
