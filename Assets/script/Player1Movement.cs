@@ -48,7 +48,7 @@ public class Player1Movement : MonoBehaviour
         }*/
         if (col.gameObject.name == "death")
         {
-            CloneObject();
+            CloneObject(player1);
         }
 
         if (col.gameObject.name == "boost1")
